@@ -7,7 +7,7 @@ const app = express();
 
 // conecting to mongoDB
 const dbURL =
-  "mongodb+srv://Laddie:Laddie123@nodecruster.0zxfi3j.mongodb.net/?retryWrites=true&w=majority";
+"mongodb+srv://Laddie:elia123@nodecruster.0zxfi3j.mongodb.net/?retryWrites=true&w=majority";
 mongoose
   .connect(dbURL)
   .then((result) => app.listen(3000))
@@ -29,7 +29,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
-/*
+
 app.get("/add-blog", (req, res) => {
   const blog = new Blog({
     title: "New Bog",
@@ -63,7 +63,7 @@ app.get('/single-blog',(req,res)=>{
         console.log(err);
     })
 })
-*/
+
 app.get("/", (req, res) => {
   res.redirect("/blogs");
 });
